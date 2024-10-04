@@ -8,7 +8,7 @@ export default interface Pedido{
     data: Date
     itens: ItemPedido[]
     valorTotal: number
-    Status: Status
+    status: Status
     formaPagamento: FormaPagamento
     entrega: PedidoEntrega
 }

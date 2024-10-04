@@ -6,5 +6,5 @@ export default interface PedidoEntrega {
     logradouro: string
     complemento: string
     cidade: string
-    estrago: string
+    estado: string
 }
