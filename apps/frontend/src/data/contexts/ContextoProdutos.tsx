@@ -1,6 +1,7 @@
 'use client'
 import { createContext, useCallback, useEffect, useState } from 'react'
-import { FiltrarProdutos, Produto } from '@gstore/core'
+import { Produto } from '@gstore/core';
+import {FiltrarProdutos} from '@gstore/core';
 import useAPI from '../hooks/useAPI'
 
 export interface ContextoProdutosProps {
