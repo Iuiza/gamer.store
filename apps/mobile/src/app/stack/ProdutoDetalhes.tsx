@@ -1,5 +1,9 @@
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
+import Especificacoes from '../../components/produto/Especificacoes'
+import BannerCompra from '../../components/produto/BannerCompra'
 import Cores from '@/src/data/constants/Cores'
+import MedidorDePreco from '@/src/components/produto/MedidorDePreco'
+import AvaliacoesUsuarios from '@/src/components/produto/AvaliacoesUsuarios'
 
 export default function ProdutoDetalhes(props: any) {
     const { produto } = props.route.params
@@ -12,7 +16,11 @@ export default function ProdutoDetalhes(props: any) {
                 <View style={styles.imagemBackground}>
                     <Image src={produto.imagem} style={styles.imagem} />
                 </View>
+                <Especificacoes produto={produto} />
             </View>
+            <BannerCompra produto={produto} />
+            <MedidorDePreco produto={produto} />
+            <AvaliacoesUsuarios produto={produto} />
             <View style={{ height: 50 }} />
         </ScrollView>
     )

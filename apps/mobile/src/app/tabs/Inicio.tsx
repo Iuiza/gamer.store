@@ -1,12 +1,22 @@
-import { StyleSheet, SafeAreaView, Text, Pressable } from 'react-native'
+import { StyleSheet, ScrollView, SafeAreaView } from 'react-native'
+import ProdutoItem from '../../components/produto/ProdutoItem'
+import useProdutos from '@/src/data/hooks/useProdutos'
 
 export default function Inicio({ navigation }: any) {
+    const { produtos } = useProdutos()
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={{color: 'white'}}>Início</Text>
-                <Pressable onPress={() => navigation.navigate('ProdutoDetalhes')}>
-                    <Text style={{color: 'white'}}>Produto Detalhes</Text>
-                </Pressable>
+            <ScrollView contentContainerStyle={{ paddingVertical: 20, width: '100%' }}>
+                {produtos.map((produto) => (
+                    <ProdutoItem
+                        key={produto.id}
+                        produto={produto}
+                        produtoSelecionado={() => {
+                            navigation.navigate('ProdutoDetalhes', { produto })
+                        }}
+                    />
+                ))}
+            </ScrollView>
         </SafeAreaView>
     )
 }
